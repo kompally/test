@@ -1,5 +1,5 @@
-module.exports = {
-    webElements: {
+ google = {
+    elements: {
         txtSearch: function(){
             return element(by.id('site-search'));
         },
@@ -12,19 +12,22 @@ module.exports = {
     },
 
     isSearchBarShown: function(){
-        return this.txtSearch().isDisplayed();
+        console.log(this.elements.txtSearch());
+        return this.elements.txtSearch().isDisplayed();
     },
     isSearchButtonShown: function(){
-            return this.btnSubmit().isDisplayed();
+            return this.elements.btnSubmit().isDisplayed();
     },
     enterText: function(searchtxt){
-        this.txtSearch().sendKeys(searchtxt);
+        this.elements.txtSearch().sendKeys(searchtxt);
     },
     clickSearch: function(){
-        this.btnSubmit().click();
+        this.elements.btnSubmit().click();
     },
     isSearchResultsShown: function(){
-       return this.lblSearchResults().isDisplayed();
+       return this.elements.lblSearchResults().isDisplayed();
     }
 
-}
+};
+
+module.exports = google;

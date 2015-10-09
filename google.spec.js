@@ -1,23 +1,24 @@
-describe("search npm",function(){
-    var googlePage = require("./googe.page.js");
+var googlePage = require("./google.page.js");
 
-    beforeAll(function(){
+describe("search npm",function(){
+
+    beforeAll(function() {
         browser.get("https://www.npmjs.com/");
     });
 
-    it("should have search bar shown",function(){
+    it("should have search bar shown", function(){
         expect(googlePage.isSearchBarShown()).toBe(true);
-    })
+    });
 
-    it("should have search button shown",function(){
+    it("should have search button shown", function(){
             expect(googlePage.isSearchButtonShown()).toBeTruthy();
-        })
+        });
 
-    it("should search for jasmine",function(){
+    it("should search for jasmine", function(){
         googlePage.enterText("jasmine");
         googlePage.clickSearch();
         expect(googlePage.isSearchResultsShown()).toBeTruthy();
-    })
+    });
 
 
 })
