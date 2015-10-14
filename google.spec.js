@@ -7,7 +7,7 @@ describe("search npm",function(){
     });
 
     it("should have search bar shown", function(){
-        expect(googlePage.isSearchBarShown()).toBe(true);
+        expect(googlePage.isSearchBarShown()).toBe(false);
     });
 
     it("should have search button shown", function(){

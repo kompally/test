@@ -1,5 +1,5 @@
  google = {
-    elements: {
+    webElements: {
         txtSearch: function(){
             return element(by.id('site-search'));
         },
@@ -12,20 +12,19 @@
     },
 
     isSearchBarShown: function(){
-        console.log(this.elements.txtSearch());
-        return this.elements.txtSearch().isDisplayed();
+        return this.webElements.txtSearch().isDisplayed();
     },
     isSearchButtonShown: function(){
-            return this.elements.btnSubmit().isDisplayed();
+            return this.webElements.btnSubmit().isDisplayed();
     },
     enterText: function(searchtxt){
-        this.elements.txtSearch().sendKeys(searchtxt);
+        this.webElements.txtSearch().sendKeys(searchtxt);
     },
     clickSearch: function(){
-        this.elements.btnSubmit().click();
+        this.webElements.btnSubmit().click();
     },
     isSearchResultsShown: function(){
-       return this.elements.lblSearchResults().isDisplayed();
+       return this.webElements.lblSearchResults().isDisplayed();
     }
 
 };

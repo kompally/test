@@ -1,4 +1,7 @@
-var TestReporter = require("jasmine-spec-reporter");
+var specReporter = require("jasmine-spec-reporter");
+var ScreenShotReporter = require('protractor-screenshot-reporter');
+
+
 exports.config = {
 
 
@@ -61,9 +64,18 @@ exports.config = {
   onPrepare: function() {
     browser.ignoreSynchronization = true;
 
-    jasmine.getEnv().addReporter(new TestReporter());
+    jasmine.getEnv().addReporter(new specReporter());
 
-    },
+    // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
+    jasmine.getEnv().addReporter(new ScreenShotReporter({
+     baseDirectory: './tmp/screenshots',
+     takeScreenShotsOnlyForFailedSpecs: true
+    }));
+
+
+
+    }
+
 
 
 };
